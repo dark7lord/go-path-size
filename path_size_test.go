@@ -6,6 +6,11 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+const (
+	testdataDir  = "./testdata"
+	testdataFile = "./testdata/one-piece.csv"
+)
+
 func TestGetPathSize_File(t *testing.T) {
 	tests := []struct {
 		name     string
@@ -15,12 +20,12 @@ func TestGetPathSize_File(t *testing.T) {
 	}{
 		{
 			name:     "size without flags",
-			path:     "./testdata/one-piece.csv",
+			path:     testdataFile,
 			expected: "1681B",
 		},
 		{
 			name:     "human readable size",
-			path:     "./testdata/one-piece.csv",
+			path:     testdataFile,
 			human:    true,
 			expected: "1.6KB",
 		},
@@ -46,26 +51,26 @@ func TestGetPathSize_Dir(t *testing.T) {
 	}{
 		{
 			name:      "size without flags",
-			path:      "./testdata",
+			path:      testdataDir,
 			recursive: false,
 			expected:  "2351B",
 		},
 		{
 			name:      "size with recursive flag",
-			path:      "./testdata",
+			path:      testdataDir,
 			recursive: true,
 			expected:  "4713B",
 		},
 		{
 			name:      "size with recursive and hidden flags",
-			path:      "./testdata",
+			path:      testdataDir,
 			recursive: true,
 			all:       true,
 			expected:  "9252B",
 		},
 		{
 			name:      "size with recursive hidden human flags",
-			path:      "./testdata",
+			path:      testdataDir,
 			recursive: true,
 			human:     true,
 			all:       true,
@@ -132,12 +137,12 @@ func TestFormatPathSize(t *testing.T) {
 	}{
 		{
 			name:     "file path",
-			path:     "./testdata/one-piece.csv",
+			path:     testdataFile,
 			expected: "1681B\t./testdata/one-piece.csv",
 		},
 		{
 			name:     "directory path",
-			path:     "./testdata",
+			path:     testdataDir,
 			expected: "2351B\t./testdata",
 		},
 	}
