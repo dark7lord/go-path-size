@@ -1,6 +1,7 @@
 # go-path-size
 
-[![Hexlet tests and linter status](https://github.com/dark7lord/go-project-242/actions/workflows/test-ci.yml/badge.svg)](https://github.com/dark7lord/go-project-242/actions)
+[![Actions Status](https://github.com/dark7lord/go-path-size/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/dark7lord/go-path-size/actions)
+[![Hexlet tests and linter status](https://github.com/dark7lord/go-path-size/actions/workflows/ci.yml/badge.svg)](https://github.com/dark7lord/go-path-size/actions)
 
 A CLI utility that calculates the size of files and directories, with support for recursive traversal and human-readable output formatting.
 
